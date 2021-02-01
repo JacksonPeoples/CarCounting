@@ -13,6 +13,8 @@ As recently as 1999 the best resolution available commercially in satellite imag
 ![count_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/count_example.jpg)
 <img src="https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/sampled_example.jpg" width="5000">
 
+![bootstrap](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/bootstrap.jpg)
+
 
 <a id="1">[1]</a>
 'The Development Of Traffic Data Collection Methods' https://medium.com/goodvision/the-development-of-traffic-data-collection-cd87cc65aaab#:~:text=Traditional%20methods%20of%20collecting%20traffic,image%20analysis%20using%20machine%20vision.
