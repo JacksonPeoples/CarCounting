@@ -71,14 +71,15 @@ Another potential improvement would be to train the model to identify all types 
 
 ## Helpful Resources
 Truly, too many helpful resources to count, but here are a few that helped me:
-[The Dataset](https://gdo152.llnl.gov/cowc/)
-[YOLO: Real-Time Object Detection](https://pjreddie.com/darknet/yolo/)
-[Github repo of the Yolov3 iteration I used](https://github.com/ultralytics/yolov3)
-[Guide to Running on a GCP instance](https://github.com/ultralytics/yolov3/wiki/GCP-Quickstart)
-[Perfomance Metrics Guide](https://medium.com/swlh/on-object-detection-metrics-ae1e2090bd65)
-[Understanding GIoU](https://medium.com/visionwizard/understanding-diou-loss-a-quick-read-a4a0fbcbf0f0)
-[Understanding mAP](https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173)
-[Extemely Helpful Presentation on Object Detection in Aerial Imagery](https://www.youtube.com/watch?v=rjKvXhEXDFs&t=510s)
+  * [The Dataset](https://gdo152.llnl.gov/cowc/)
+  * [Example of object detection on COWC](https://medium.com/the-downlinq/car-localization-and-counting-with-overhead-imagery-an-interactive-exploration-9d5a029a596b)
+  * [YOLO: Real-Time Object Detection](https://pjreddie.com/darknet/yolo/)
+  * [Github repo of the Yolov3 iteration I used](https://github.com/ultralytics/yolov3)
+  * [Guide to Running on a GCP instance](https://github.com/ultralytics/yolov3/wiki/GCP-Quickstart)
+  * [Perfomance Metrics Guide](https://medium.com/swlh/on-object-detection-metrics-ae1e2090bd65)
+  * [Understanding GIoU](https://medium.com/visionwizard/understanding-diou-loss-a-quick-read-a4a0fbcbf0f0)
+  * [Understanding mAP](https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173)
+  * [Extemely Helpful Presentation on Object Detection in Aerial Imagery](https://www.youtube.com/watch?v=rjKvXhEXDFs&t=510s)
 
 <a id="1">[1]</a>
 'The Development Of Traffic Data Collection Methods' https://medium.com/goodvision/the-development-of-traffic-data-collection-cd87cc65aaab#:~:text=Traditional%20methods%20of%20collecting%20traffic,image%20analysis%20using%20machine%20vision.
