@@ -44,7 +44,7 @@ I used 12 scenes in all (omitted any grayscale scenes). I held out one scene for
 ![training_metrics](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/results.png)
 
 Training metrics:
-  * **Box**: Box refers to the GIoU loss function. IoU (intersection over union) refers to the degree of overlap between our predicted bounding box and the ground truth label. The problem is that in a typical 1-IoU loss function, any labels/predictions that do not intersect at all will result in 0 IoU and not all 0 IoU's are equally bad predictions. GIoU introduces a penalty term, *C*, that refers to the smallest box containing both the ground truth label and prediction.
+  * **Box**: Box refers to the GIoU loss function. IoU (intersection over union) refers to the degree of overlap between our predicted bounding box and the ground truth label. The problem is that in a typical 1-IoU loss function, any labels/predictions that do not intersect at all will result in 0 IoU and not all 0 IoU's are equally bad predictions. GIoU(generalized intersection over union) introduces a penalty term, *C*, that refers to the smallest box containing both the ground truth label and prediction.
   * **Objectness**: The objectness refers to a loss funtion that quantifies how likely an object of interest is present in a given cell.
   * **Classification**: Classification is irrelevant for this task because we are only looking for cars. Otherwise it would refer to the model's accuracy in classifying objects of interest.
   * **Precision**: the proportion of how many predicted cars are actually cars (true positive/true positive + false positve).
