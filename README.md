@@ -34,6 +34,9 @@ Ultimately, in scenes such as the previous one, the weighted probabilities produ
 ![bootstrap](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/bootstrap.png)
 
 ## Training
+I decided to use the [Yolov3](https://pjreddie.com/darknet/yolo/) object detection system for its speed. My thought process is that large aerial images contain a vast amount of information (some of the scenes were 13,000x13,000 or 4sq/km) so a useful model would need to quickly iterate over tiles of a large scene. Yolo differs from other models in that it is able to look at the whole image in one pass rather than region proposals created by a separate network. Yolo splits the entire image into an SxS grid and then produces n bounding boxes. For each bounding box, a class probability and offset values are computed. This makes it much faster than other algorithms.
+
+I used 12 scenes in all (omitted any grayscale scenes). I held out one scene for testing after training and used my sampling script to produce 100 random samples of each of the the remaining 11 scenes. I used a 90/10 train/test split. I then trained for 30 epochs (actually 35 because I lost connection to my VM on the first run but was able to start the second run with those weights) on an n1-standard-8 GCP VM instance with 1 NVIDIA Tesla V100. Training took ≈1.5 hours.
 
 ![training_metrics](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/results.png)
 
