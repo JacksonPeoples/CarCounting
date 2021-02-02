@@ -71,6 +71,8 @@ Overall, performance metrics suggest the model would be effective in monitoring 
 
 Another potential improvement would be to train the model to identify all types of traffic (the dataset only labeled cars, not commercial trucks). This would provide a clearer picture of traffic activity but ultimately it is likely that car traffic volume is a decent proxy for total traffic volume.
 
+Overall, an extremely fun and challenging project.
+
 ## Helpful Resources
 Truly, too many helpful resources to count, but here are a few that helped me:
   * [The Dataset](https://gdo152.llnl.gov/cowc/)
