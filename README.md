@@ -38,7 +38,7 @@ Ultimately, in scenes such as the previous one, the weighted probabilities produ
 ![training_metrics](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/results.png)
 
 ## Testing
-![pr curve](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/results.png)
+![pr curve](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/precision_recall_curve.png)
 ![sample test](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/image_test.jpg)
 ![annotated test](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/image_test_2.jpg)
 
