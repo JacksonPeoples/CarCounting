@@ -1,4 +1,4 @@
-# Counting Cars in Aerial Imagery
+# Detecting Cars in Aerial Imagery
 In a [previous project](https://github.com/JacksonPeoples/AustinCrashes), I looked at patterns in traffic collisions and created a model to predict hourly crashes in Austin, Texas. While the model was still fairly useful, I was unfortunately unable to find extensive traffic volume data.
 
 Traditionally, this data has been collected using magnetic or piezo-sensors (the strips you drive over),  or human surveyors either in person or via video [[1]](#1). And while computer vision techniques have been applied to this domain, it's often via surveilance cameras. While this is useful for collecting data at a specific instersection or on a certain block, it doesn't give always give a clear picture of how traffic moves around a neighborhood or even a city.
