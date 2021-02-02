@@ -48,15 +48,33 @@ Training metrics:
   * **Recall**: the proportion of how many of the actual cars were correctly identified (true positive/true positive + false negative). 
   * **mAP@0.5**: in this case, mAP is actually synonymous with AP(average precision). AP is the average precision for recall values ranging from 0 to 1. It basically measures how well our model can continue to avoid false positives while decreasing the rate of false negatives. In multiclass object detection, mAP refers to the average AP for all classes. *0.5* refers to the IoU threshold for determining a correct classification. 0.5 as a threshold is a common convention but is arbitrarily chosen.
   * **mAP@0.5:.95**: The average AP score at different thresholds ranging from 0.5 to 0.95 in 0.05 increments.
-
+All in all (aside from losing connection to my VM) training was extremely successful. All training metrics/loss functions converged as expected and an AP of .97+ suggests the model would be extremely useful in tracking traffic volume.
 
 ## Testing
+I reserved a densely populated scene from Utah and randomly produced 10 samples to test the model. Results are as shown:
 ![pr curve](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/precision_recall_curve.png)
+Looks great. Unfortunately, I was unable to determine a method for extracting the predictions and plotting them against ground truth labels with recall/precision metrics for demonstrative purposes. But, as an example, here is an image which I used the model to *detect*(i.e. fed the model with no ground truth labels):
 ![sample test](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/image_test.jpg)
 ![annotated test](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/image_test_2.jpg)
+Passes the eyeball test!
 
 ## Results/Improvements
+Overall, performance metrics suggest the model would be effective in monitoring traffic volume. Next steps would be to create a pipeline that:
+  1. Takes in large aerial imagery
+  2. Tiles the imagery into sizes the model can handle
+  3. Feeds tiles into the model to create predictions
+  4. Pieces predictions back together.
+Another potential improvement would be to train the model to identify all types of traffic (the dataset only labeled cars, not commercial trucks). This would provide a clearer picture of traffic activity but ultimately it is likely that car traffic volume is a decent proxy for total traffic volume.
 
+## Helpful Resources
+Truly, too many helpful resources to count, but here are a few that helped me:
+[YOLO: Real-Time Object Detection](https://pjreddie.com/darknet/yolo/)
+[Github repo of the Yolov3 iteration I used](https://github.com/ultralytics/yolov3)
+[Guide to Running on a GCP instance](https://github.com/ultralytics/yolov3/wiki/GCP-Quickstart)
+[Perfomance Metrics Guide](https://medium.com/swlh/on-object-detection-metrics-ae1e2090bd65)
+[Understanding GIoU](https://medium.com/visionwizard/understanding-diou-loss-a-quick-read-a4a0fbcbf0f0)
+[Understanding mAP](https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173)
+[Extemely Helpful Presentation on Object Detection in Aerial Imagery](https://www.youtube.com/watch?v=rjKvXhEXDFs&t=510s)
 
 <a id="1">[1]</a>
 'The Development Of Traffic Data Collection Methods' https://medium.com/goodvision/the-development-of-traffic-data-collection-cd87cc65aaab#:~:text=Traditional%20methods%20of%20collecting%20traffic,image%20analysis%20using%20machine%20vision.
