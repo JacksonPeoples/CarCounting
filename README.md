@@ -51,6 +51,7 @@ Training metrics:
   * **Recall**: the proportion of how many of the actual cars were correctly identified (true positive/true positive + false negative). 
   * **mAP@0.5**: in this case, mAP is actually synonymous with AP(average precision). AP is the average precision for recall values ranging from 0 to 1. It basically measures how well our model can continue to avoid false positives while decreasing the rate of false negatives. In multiclass object detection, mAP refers to the average AP for all classes. *0.5* refers to the IoU threshold for determining a correct classification. 0.5 as a threshold is a common convention but is arbitrarily chosen.
   * **mAP@0.5:.95**: The average AP score at different thresholds ranging from 0.5 to 0.95 in 0.05 increments.
+
 All in all (aside from losing connection to my VM) training was extremely successful. All training metrics/loss functions converged as expected and an AP of .97+ suggests the model would be extremely useful in tracking traffic volume.
 
 ## Testing
