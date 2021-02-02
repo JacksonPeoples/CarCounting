@@ -9,11 +9,27 @@ As recently as 1999 the best resolution available commercially in satellite imag
 ## The Data
 ![large_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/large_example.jpg)
 ## Pre-processing
-![empty_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/empty_example.jpg)
-![count_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/count_example.jpg)
-<img src="https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/sampled_example.jpg" width="5000">
+Luckily, when it comes to aerial imagery, many standard techniques for data augmentation are unnecessary:
+  * Angles of observation are constant; all from above.
+  * Size in frame is also constant.
+  * Cars are rotated naturally as they travel in different directions.
+  * Translation is accomplished by randomly sampling acrosse different scenes.
 
+However, one possible issue is random samples coming out like this:
+![empty_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/empty_example.jpg)
+This isn't the end of the world, car-less samples are necessary to train a useful model. However, many of the scenes in this dataset are very sparse and it would be easy to end up with too many empty samples.
+
+My solution was to:
+  1. Compute the proportion of total cars in a scene in each quadrant.
+  2. Weight the sampling probability based on those proportions.
+
+For example, the following image:
+![count_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/count_example.jpg)
+Might produce these samples:
+<img src="https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/sampled_example.jpg" width="5000">
+Ultimately, in scenes such as the previous one, the weighted probabilities produced only a marginally noticeable difference over the course of 100 simulations of 100 samples. The real difference was seen in more sparse scenes with higher variability by quadrant. The following histograms plot the average cars present in 100 samples for 100 simulations:
 ![bootstrap](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/bootstrap.png)
+
 
 
 <a id="1">[1]</a>
