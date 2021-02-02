@@ -31,7 +31,7 @@ For example, the following image:
 ![count_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/count_example.jpg)
 Might produce these samples:
 <img src="https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/sampled_example.jpg" width="5000">
-*The sampling script can be found [here.](https://github.com/JacksonPeoples/CarCounting/blob/master/sampling_script.py)* The script also converts single pixel labels into the text format needed by the Yolov3 system.
+*The sampling script can be found [here.](https://github.com/JacksonPeoples/CarCounting/blob/master/sampling_script.py) The script also converts single pixel labels into the text format needed by the Yolov3 system.*
 
 Ultimately, in scenes such as the previous one, the weighted probabilities produced only a marginally noticeable difference over the course of 100 simulations of 100 samples. The real utility of weighted sampling can be seen in more sparse scenes with higher variability by quadrant. The following histograms plot the average cars present in 100 samples for 100 simulations:
 ![bootstrap](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/bootstrap.png)
