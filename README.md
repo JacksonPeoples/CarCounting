@@ -9,6 +9,8 @@ As recently as 1999 the best resolution available commercially in satellite imag
 ## The Data
 I used the COWC (cars overhead with context) dataset produced by Lawrence Livermore National Laboratory. The dataset consists of aerial imagery at 15cm GSD taken over six distinct regions. In total, there are 32,716 unique annotated cars. Below is an example image:
 ![large_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/large_example.jpg)
+Data is collected via aerial platforms but at an angle that mimicks satellite imagery. Labels are provided as a single non-zero pixel.
+
 ## Pre-processing
 Luckily, when it comes to aerial imagery, many standard techniques for data augmentation are unnecessary:
   * Angles of observation are constant; all from above.
@@ -29,7 +31,7 @@ For example, the following image:
 ![count_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/count_example.jpg)
 Might produce these samples:
 <img src="https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/sampled_example.jpg" width="5000">
-*The sampling script can be found [here.](https://github.com/JacksonPeoples/CarCounting/blob/master/sampling_script.py)*
+*The sampling script can be found [here.](https://github.com/JacksonPeoples/CarCounting/blob/master/sampling_script.py)* The script also converts single pixel labels into the text format needed by the Yolov3 system.
 
 Ultimately, in scenes such as the previous one, the weighted probabilities produced only a marginally noticeable difference over the course of 100 simulations of 100 samples. The real utility of weighted sampling can be seen in more sparse scenes with higher variability by quadrant. The following histograms plot the average cars present in 100 samples for 100 simulations:
 ![bootstrap](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/bootstrap.png)
