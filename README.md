@@ -4,9 +4,10 @@ In a previous project, I looked at patterns in traffic collisions and created a 
 Traditionally, this data has been collected using magnetic or piezo-sensors (the strips you drive over),  or human surveyors either in person or via video [[1]](#1). And while computer vision techniques have been applied to this domain, it's often via surveilance cameras. While this is useful for collecting data at a specific instersection or on a certain block, it doesn't give always give a clear picture of how traffic moves around a neighborhood or even a city.
 
 ## Possible Solutions
-As recently as 1999 the best resolution available commercially in satellite imagery was 80 cm GSD (the length of one pixel represents 80 cm). Not ideal for tracking traffic patterns. However, resolution and refresh rate (due to amount of satellites in orbit) have rapidly increased, making 
+As recently as 1999 the best resolution available commercially in satellite imagery was 80 cm GSD (the length of one pixel represents 80 cm). Not ideal for tracking traffic patterns. However, resolution and refresh rate (due to amount of satellites in orbit) have rapidly increased, making traffic monitoring from aerial imagery and/or space more feasible. The best resolution commercially available at the moment is 30cm, however, space startup [Albedo](https://spacenews.com/introducing-albedo/) promises to make *10cm imagery* available in the near future.
 
 ## The Data
+I used the COWC (cars overhead with context) dataset produced by Lawrence Livermore National Laboratory. The dataset consists of aerial imagery at 15cm GSD taken over six distinct regions. In total, there are 32,716 unique annotated cars. Below is an example image:
 ![large_sample](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/large_example.jpg)
 ## Pre-processing
 Luckily, when it comes to aerial imagery, many standard techniques for data augmentation are unnecessary:
@@ -56,7 +57,7 @@ I reserved a densely populated scene from Utah and randomly produced 10 samples 
 Looks great. Unfortunately, I was unable to determine a method for extracting the predictions and plotting them against ground truth labels with recall/precision metrics for demonstrative purposes. But, as an example, here is an image which I used the model to *detect*(i.e. fed the model with no ground truth labels):
 ![sample test](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/image_test.jpg)
 ![annotated test](https://github.com/JacksonPeoples/CarCounting/blob/master/PICSforREADME/image_test_2.jpg)
-Passes the eyeball test!
+Missed a couple of cars occluded by shadows/trees but passes the eyeball test!
 
 ## Results/Improvements
 Overall, performance metrics suggest the model would be effective in monitoring traffic volume. Next steps would be to create a pipeline that:
@@ -68,6 +69,7 @@ Another potential improvement would be to train the model to identify all types 
 
 ## Helpful Resources
 Truly, too many helpful resources to count, but here are a few that helped me:
+[The Dataset](https://gdo152.llnl.gov/cowc/)
 [YOLO: Real-Time Object Detection](https://pjreddie.com/darknet/yolo/)
 [Github repo of the Yolov3 iteration I used](https://github.com/ultralytics/yolov3)
 [Guide to Running on a GCP instance](https://github.com/ultralytics/yolov3/wiki/GCP-Quickstart)
